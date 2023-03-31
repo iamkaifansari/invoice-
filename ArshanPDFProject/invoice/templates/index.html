@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form document</title>
+    <style>
+        form {
+            display: flex;
+        }
+        .container {
+            margin: 5px;
+        }
+-block
+        .btn {
+            padding: 5px;
+            margin-right: 5px;
+        }
+
+        /* .outer{
+        border: 2px solid black;
+        border-width: 430px;
+       } */
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <form action="invoice" class="form1" method="POST">
+            {% csrf_token %}
+            <div class="container">
+                <h2>Saller Details </h2>
+                <label for="">Saller Name :</label><br>
+                <input type="text" placeholder="name" name="seller_name"> <br>
+                <label for="">Saller Address :</label><br>
+                <input type="text" placeholder="address" name="seller_address"> <br>
+                <label for="">Saller Contect </label><br>
+                <input type="number" placeholder="6787882282" name="seller_phone"><br>
+            </div>
+
+            <div class="container">
+                <h2>Buyer Details</h2>
+                <label for="">Buyer Name</label><br>
+                <input type="text" placeholder="name" name="buyer_name"><br>
+                <label for="">Buyer Address</label><br>
+                <input type="text" placeholder="address" name="buyer_address"><br>
+                <label for="">Buyer Contect </label><br>
+                <input type="number" placeholder="86826726482" name="buyer_phone">
+            </div>
+            <div class="container">
+                <h2>Individual Items</h2><br>
+                <small>In case of multiple products, write the value separated by commas</small> <br>
+                <label for="">Name</label><br>
+                <input type="text" placeholder="Rice, Flour, Biscuits" name="products"><br>
+                <label for="">Price</label><br>
+                <input type="text" placeholder="7299, 599, 499" name="price"><br>
+                <label for="">Tax(%)</label><br>
+                <input type="text" placeholder="21, 34, 10" name="tax"><br>
+                <label for="">Quantity</label><br>
+                <input type="text" placeholder="10, 15, 20" name="quantity"><br>
+            </div>
+        </div>
+        <div class="">
+            <h2>Submit Details and get invoice</h2>
+            <button class="btn">Submit</button>
+        </div>
+
+    </form>
+</body>
+
+</html>
